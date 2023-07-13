@@ -25,11 +25,10 @@ namespace EnrolleApi.Controllers
         }
 
         [HttpPost]
-        public async Task<List<string>> Programs(string LevelTraining, string FormStudy)
+        public async Task<List<string>> Programs([FromBody] DataLevStudy Data)
         {
             var ListNaprav = await db.ListEnrolle
-                .Where(x => x.FormStudy == FormStudy).Select(x => x.Napravlenie).Distinct().ToListAsync();
-            var ListNaprav12 = await db.ListEnrolle.ToListAsync();
+                .Where(x => x.FormStudy == Data.LevelTraining).Select(x => x.Napravlenie).Distinct().ToListAsync();
 
             return ListNaprav;
         }

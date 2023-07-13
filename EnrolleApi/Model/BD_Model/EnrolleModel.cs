@@ -7,6 +7,9 @@ namespace EnrolleApi.Model.BD_Model
     [Keyless]
     public class EnrolleModel
     {
+        [NotMapped]
+        public int? key { get; set; }
+
         [Column("Уникальный код")]
         public string? Snils { get; set; }
 
@@ -14,10 +17,10 @@ namespace EnrolleApi.Model.BD_Model
         public string? TypeIsp { get; set; }
 
         [Column("Сумма баллов")]
-        public float? SumBal_ID { get; set; }
+        public int? SumBal_ID { get; set; }
 
         [Column("Сумма баллов по предметам")]
-        public float? SumBal { get; set; }
+        public int? SumBal { get; set; }
         
         [Column("Предмет1")]
         public int? Pred_1 { get; set; }
@@ -30,7 +33,7 @@ namespace EnrolleApi.Model.BD_Model
         [Column("Предмет4")]
         public int? Pred_4 { get; set; }
         [Column("Сумма баллов за инд.дост")]
-        public float? SumBal_OnlyID { get; set; }
+        public int? SumBal_OnlyID { get; set; }
 
         [Column("Приоритет")]
         public int? Priority { get; set; }       
